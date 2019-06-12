@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 import Layout from '../components/Layout'
 import Banner from '../components/Banner'
@@ -10,7 +10,7 @@ const notFound = () => {
     <Layout>
       <header className={style.error}>
         <Banner title="Oups ! Nothing found">
-          <Link to="/" className="btn-white">Back to Home</Link>
+          <AniLink fade to="/" className="btn-white">Back to Home</AniLink>
         </Banner>
       </header>
     </Layout>

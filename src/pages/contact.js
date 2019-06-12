@@ -3,14 +3,13 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import StyledHero from '../components/StyledHero'
+import Contact from '../components/Contact/Contact'
 
 const contact = ({data}) => {
   return (
     <Layout>
-      <StyledHero home={false} img={data.contactBcg.childImageSharp.fluid}>
-        The contact page
-      </StyledHero>
-      
+      <StyledHero img={data.contactBcg.childImageSharp.fluid} />
+      <Contact/>
     </Layout>
   )
 }

@@ -8,8 +8,8 @@ import StyledHero from '../components/StyledHero'
  const blog = ({data}) => {
   return (
     <Layout>
-      <StyledHero home={false} img={data.blogBcg.childImageSharp.fluid}>
-        <h1>Hello from the blog page</h1>
+      <StyledHero img={data.blogBcg.childImageSharp.fluid}>
+        
       </StyledHero>       
     </Layout>
   )

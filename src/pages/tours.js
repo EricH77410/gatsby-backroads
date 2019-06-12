@@ -8,8 +8,8 @@ export default class tours extends React.Component {
   render() {    
     return (
       <Layout>
-        <StyledHero home={false} img={this.props.data.toursBcg.childImageSharp.fluid}>
-          <h1>The Tours page</h1>
+        <StyledHero img={this.props.data.toursBcg.childImageSharp.fluid}>
+          
         </StyledHero>
                
       </Layout>
