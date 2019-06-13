@@ -3,9 +3,28 @@ import React from 'react'
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
+// Au cas ou les images seraient vides.
+import { useStaticQuery, graphql } from 'gatsby'
+
+const getDefaultImg = graphql`
+query {
+  file(relativePath: {eq:"defaultBcg.jpeg"}){
+    childImageSharp{
+      fluid (quality: 90, maxWidth: 4160) {
+        ...GatsbyImageSharpFluid_withWebp
+      }
+    }
+  }
+}
+`
+
 const StyledHero = ({img, className, children, home}) => {
+
+  const data = useStaticQuery(getDefaultImg)
+  const image = img ? img : data.file.childImageSharp.fluid
+
   return (
-    <BackgroundImage className={className} fluid={img} home={home}>
+    <BackgroundImage className={className} fluid={image} home={home}>
       {children}
     </BackgroundImage>
   )
